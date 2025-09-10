@@ -29,7 +29,7 @@ METADATA_COLUMNS = [
 
 class MusicRecommenderEngine:
     """
-    Advanced Multi-Algorithm Music Recommendation Engine for HarmoniQ.
+    Advanced Multi-Algorithm Music Recommendation Engine.
     Supports:
       - Audio DNA High-Dimensional Cosine Similarity
       - Hybrid (Audio + Genre/Artist TF-IDF) Recommender
@@ -60,10 +60,10 @@ class MusicRecommenderEngine:
     def load_and_train(self):
         """Loads CSV dataset, preprocesses columns, scales features, and builds indexes."""
         if not os.path.exists(self.data_path):
-            print(f"[HarmoniQ Engine] WARNING: Dataset not found at {self.data_path}")
+            print(f"[Music Recommendation Engine] WARNING: Dataset not found at {self.data_path}")
             return
 
-        print(f"[HarmoniQ Engine] Loading dataset from {self.data_path}...")
+        print(f"[Music Recommendation Engine] Loading dataset from {self.data_path}...")
         df_raw = pd.read_csv(self.data_path)
 
         # Standardize missing values
@@ -111,7 +111,7 @@ class MusicRecommenderEngine:
         self.tfidf_matrix = self.tfidf_vectorizer.fit_transform(self.df["text_features"])
 
         self.is_ready = True
-        print(f"[HarmoniQ Engine] Ready! Loaded {len(self.df)} tracks across {len(AUDIO_FEATURES)} audio dimensions and {self.kmeans.n_clusters} clusters.")
+        print(f"[Music Recommendation Engine] Ready! Loaded {len(self.df)} tracks across {len(AUDIO_FEATURES)} audio dimensions and {self.kmeans.n_clusters} clusters.")
 
     def _format_track(self, row: pd.Series, similarity: Optional[float] = None) -> Dict[str, Any]:
         """Formats a DataFrame row into a clean dictionary response with Audio DNA metrics."""

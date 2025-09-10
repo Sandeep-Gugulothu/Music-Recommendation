@@ -31,7 +31,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="Intelligent Containerized Music Recommendation Engine with High-Dimensional Audio DNA, Vibe Lab, and User Taste Profiling.",
+    description="Containerized Music Recommendation Engine with Audio DNA analysis, mood tuning, and user taste profiling.",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc"

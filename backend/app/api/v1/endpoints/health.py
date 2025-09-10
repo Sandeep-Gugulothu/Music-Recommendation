@@ -23,7 +23,7 @@ def health_check(db: Session = Depends(get_db)) -> Any:
 
     return {
         "status": "healthy" if (db_healthy and engine.is_ready) else "degraded",
-        "service": "HarmoniQ Music Recommendation API",
+        "service": "Music Recommendation API",
         "version": "1.0.0",
         "database": "connected" if db_healthy else "disconnected",
         "engine": {
